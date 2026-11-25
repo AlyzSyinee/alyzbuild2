@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#e9e9e5"><title>ALYZ BUILD — Web to APK</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="splash" class="splash">
+  <div class="splash-mark"><span></span><i></i></div>
+  <div class="brand">ALYZ BUILD</div>
+  <div class="progress-track"><div id="progress"></div></div>
+  <div class="progress-label"><span>INITIALIZING WORKSPACE</span><b id="percent">0%</b></div>
+</div>
+<div id="app" class="app hidden">
+  <header class="topbar"><a class="wordmark" href="#">ALYZ<span>.</span></a><div class="status"><i></i> BUILD SYSTEM ONLINE</div></header>
+  <main>
+    <section class="intro"><div class="eyebrow">ANDROID APP GENERATOR / 01</div><h1>From source<br>to <span>application.</span></h1><p>Build native Android packages from your Flutter or HTML project. One workspace, two pipelines.</p></section>
+    <nav class="tabs" aria-label="Build type">
+      <button class="tab active" data-tab="flutter"><span class="tab-no">01</span><span>Flutter</span><span class="tab-arrow">↗</span></button>
+      <button class="tab" data-tab="html"><span class="tab-no">02</span><span>HTML</span><span class="tab-arrow">↗</span></button>
+    </nav>
+    <section class="panel active" id="panel-flutter">
+      <div class="panel-heading"><div><div class="eyebrow">NATIVE PIPELINE</div><h2>Flutter to APK</h2></div><div class="mini-icon">F</div></div>
+      <p class="subcopy">Upload a ZIP archive of your Flutter project. Your archive must contain <code>pubspec.yaml</code> at its root.</p>
+      <label class="dropzone" for="flutter-file"><input id="flutter-file" type="file" accept=".zip,application/zip"><span class="upload-icon">↑</span><strong>Drop your Flutter ZIP here</strong><span class="muted">or <u>browse files</u></span><small>ZIP archive · Maximum 45 MB</small></label>
+      <div class="file-picked" id="flutter-picked">No file selected</div>
+      <button class="build-button" data-build="flutter"><span>Build Flutter APK</span><b>↗</b></button>
+    </section>
+    <section class="panel" id="panel-html">
+      <div class="panel-heading"><div><div class="eyebrow">WEBVIEW PIPELINE</div><h2>HTML to APK</h2></div><div class="mini-icon">H</div></div>
+      <p class="subcopy">Upload one <code>index.html</code> or a ZIP containing your complete web project (HTML, CSS, JS and assets).</p>
+      <label class="dropzone" for="html-file"><input id="html-file" type="file" accept=".html,.htm,.zip,text/html,application/zip"><span class="upload-icon">↑</span><strong>Drop your HTML or ZIP here</strong><span class="muted">or <u>browse files</u></span><small>HTML / ZIP · Maximum 45 MB</small></label>
+      <div class="file-picked" id="html-picked">No file selected</div>
+      <div class="permission-note"><span class="permission-dot"></span><div><b>Internet permission enabled</b><small>Android INTERNET permission is included. Your web app opens in a native WebView without browser address bars.</small></div></div>
+      <button class="build-button" data-build="html"><span>Build HTML APK</span><b>↗</b></button>
+    </section>
+    <section class="logs">
+      <div class="logs-head"><div><div class="eyebrow">LIVE OUTPUT</div><h3>Build logs</h3></div><span class="log-state" id="log-state">IDLE</span></div>
+      <div class="log-window" id="logs"><div class="log-line dim"><span>00:00:00</span> ALYZ BUILD environment ready.</div><div class="log-line dim"><span>00:00:00</span> Select a pipeline and upload your project.</div></div>
+      <div class="result hidden" id="result"><div><b id="result-title">Build complete</b><small id="result-desc">Your APK is ready.</small></div><a id="download" class="download" href="#">Download APK <span>↓</span></a></div>
+    </section>
+    <footer><span>ALYZ BUILD © 2026</span><span>POWERED BY GITHUB ACTIONS</span></footer>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="/app.js"></script>
+</body></html>
